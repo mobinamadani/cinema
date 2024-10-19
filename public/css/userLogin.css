@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d7d7d7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    width: 580px;
+    height: 180px;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 290px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.m-top3 button {
+    background-color: #f33a3a;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    width: 170px; /* Set a specific width */
+    height: 40px; /* Set a specific height */
+}
+
+button:hover {
+    background-color: #ef0404;
+}
+
+.m-top1{
+    margin-top: 2px;
+}
+
+.m-top2{
+    margin-top: 11px;
+}
+
+.m-top3{
+    margin-top: 15px;
+}
+
+.m-r{
+    margin-right: 90px;
+}
+
+.m-left1{
+    margin-left: 9px;
+}
+
+.m-left2{
+    margin-left: 90px;
+}
+
+.m-left3{
+    margin-left: 290px;
+}
+
+.m-left4{
+    margin-right: 17px;
+}
+
+.m-left5{
+    margin-left: 130px;
+}
+
+.m-left6{
+    margin-left: 125px;
+}
+
+.m-left7{
+    margin-left: 300px;
+}
+
+.m-left8{
+    margin-right: 190px;
+}
+
+.m-right1{
+    margin-right: 90px;
+}
+
+.p-left1{
+    padding-left: 60px;
+}
+
+.p-right1{
+    padding-right: 60px;
+}
+
+
+.text-right{
+    text-align: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+.flex{
+    display: flex;
+}
+
+.btn{
+    width: 120px;
+    height: 15px;
+    text-decoration: none;
+    background-color: #f33a3a;
+    padding: 15px 20px;
+    border-radius: 4cqb;
+    color: white;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: #ef0404;
+}
+
+.box{
+    width: 220px;
+    height: 15px;
+    text-decoration: none;
+    background-color: #f33a3a;
+    padding: 15px 70px;
+    border-radius: 4cqb;
+    color: white;
+    font-weight: bold;
+}
+
+.box:hover{
+    background-color: #ef0404;
+}
+
+
+

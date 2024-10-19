@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\authRequest;
+use App\Http\Requests\User\loginRequest;
 use Couchbase\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,7 @@ class authController extends Controller
         ]);
 
         auth()->login($user);
-        return redirect('/');
+        return redirect(to:route('user.loginForm'));
     }
 
     public function loginForm()
@@ -36,7 +37,7 @@ class authController extends Controller
         return view('User.login');
     }
 
-    public function login(authRequest $request)
+    public function login(loginRequest $request)
     {
         if(Auth::guard('web')->attempt($request->validated())) {
             $request->session()->regenerate();

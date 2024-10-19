@@ -26,7 +26,12 @@ Route::get('admin/logout', [\App\Http\Controllers\Admin\authController::class, '
 ///AdminDashboard///
 Route::get('admin/dashboard', [\App\Http\Controllers\Admin\authController::class, 'dashboard'])->name('admin.dashboard');
 
-
+///UserAuth///
+Route::get('user/register', [\App\Http\Controllers\User\authController::class, 'register'])->name('user.register');
+Route::post('user/store', [\App\Http\Controllers\User\authController::class, 'store'])->name('user.store');
+Route::get('user/loginForm', [\App\Http\Controllers\User\authController::class, 'loginForm'])->name('user.loginForm');
+Route::post('user/login', [\App\Http\Controllers\User\authController::class, 'login'])->name('user.login');
+Route::get('user/logout', [\App\Http\Controllers\User\authController::class, 'logout'])->name('user.logout');
 
 
 

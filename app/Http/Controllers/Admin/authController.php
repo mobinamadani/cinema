@@ -27,7 +27,7 @@ class authController extends Controller
 
         auth()->login($admin);
 
-        return redirect('/');
+        return redirect(to:route('admin.dashboard'));
     }
 
     public function dashboard(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
@@ -35,7 +35,7 @@ class authController extends Controller
         return view('Admin.dashboard');
     }
 
-    public function logout(): \Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application
+    public function logout()
     {
         auth()->logout();
         return redirect(to:route('admin.login'));

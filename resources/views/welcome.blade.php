@@ -15,7 +15,7 @@
                 <ul class="d-flex p-top1">
                     <li><a href="" class="ul ul-1 p-right1 text-gray-dark">ورود یا ثبت نام</a></li>
                     <li><a href="" class="ul ul-1 p-right1 text-gray-dark">بلیت های من</a></li>
-                    <li><a class="p-left1 text-red">سینما تیکت</a></li>
+                    <li><a class="p-left1 text-red">سینما تایم </a></li>
                 </ul>
             </div>
         </section>

@@ -21,7 +21,7 @@ Route::get('/', function () {
 ///adminAuth///
 Route::get('admin/login', [\App\Http\Controllers\Admin\authController::class, 'login'])->name('admin.login');
 Route::post('admin/login', [\App\Http\Controllers\Admin\authController::class, 'store'])->name('admin.store');
-Route::post('admin/logout', [\App\Http\Controllers\Admin\authController::class, 'logout'])->name('admin.logout');
+Route::get('admin/logout', [\App\Http\Controllers\Admin\authController::class, 'logout'])->name('admin.logout');
 
 ///AdminDashboard///
 Route::get('admin/dashboard', [\App\Http\Controllers\Admin\authController::class, 'dashboard'])->name('admin.dashboard');

@@ -72,10 +72,38 @@ button:hover {
     margin-left: 390px;
 }
 
+.m-left4{
+    margin-left: 230px;
+}
+
+.m-left5{
+    margin-right: 50px;
+}
+
+.p-top2{
+    padding-top: 30px;
+}
+
+.p-right1{
+    padding-right: 120px;
+}
+
+
 .text-right{
     text-align: right;
 }
 
 .text-center{
     text-align: center;
+}
+
+.text-size{
+    font-size: large;
+}
+
+.custom-select {
+    width: 200px; /* Set your desired width */
+    height: 20px; /* Set your desired height */
+    align-self: center;
+    /*font-size: 16px; !* Adjust font size *!*/
 }

@@ -23,8 +23,8 @@
                 <li><a href="#">خانه</a></li>
                 <li><a href="{{route('movie.create')}}">افزودن فیلم</a></li>
                 <li><a href="{{route('movie.index')}}">فیلم ها</a></li>
-                <li><a href="#">کاربران</a></li>
-                <li><a href="#">رزرو ها</a></li>
+                <li><a href="{{route('user.show')}}">کاربران</a></li>
+                <li><a href="{{route('reservation.show')}}">رزرو ها</a></li>
                 <li><a href="{{route('admin.logout')}}">خروج</a></li>
             </ul>
         </div>

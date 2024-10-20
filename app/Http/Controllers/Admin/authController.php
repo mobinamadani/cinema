@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\authRequest;
 use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class authController extends Controller
 {
@@ -14,19 +16,15 @@ class authController extends Controller
         return view('Admin.login');
     }
 
-    public function store(authRequest $request): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
+    public function store(authRequest $request)
     {
-        /**
-         * @var Admin $admin
-         */
-
-        $admin = Admin::query()->create([
-           'name' => $request->get('name'),
-           'password' => bcrypt($request->get('password')),
-        ]);
-
-        auth()->login($admin);
-        return redirect(to:route('admin.dashboard'));
+        if (Auth::guard('admin')->attempt($request->validated())) {
+            $request->session()->regenerate();
+            return redirect(to: route('admin.dashboard'));
+        }
+        return back()->withErrors([
+            'password' => 'اطلاعات وارد شده صحیح نیست',
+        ])->onlyInput('email');
     }
 
     public function dashboard(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application

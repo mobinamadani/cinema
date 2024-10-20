@@ -26,12 +26,18 @@ Route::get('admin/logout', [\App\Http\Controllers\Admin\authController::class, '
 ///AdminDashboard///
 Route::get('admin/dashboard', [\App\Http\Controllers\Admin\authController::class, 'dashboard'])->name('admin.dashboard');
 
+
+
 ///UserAuth///
 Route::get('user/register', [\App\Http\Controllers\User\authController::class, 'register'])->name('user.register');
 Route::post('user/store', [\App\Http\Controllers\User\authController::class, 'store'])->name('user.store');
 Route::get('user/loginForm', [\App\Http\Controllers\User\authController::class, 'loginForm'])->name('user.loginForm');
 Route::post('user/login', [\App\Http\Controllers\User\authController::class, 'login'])->name('user.login');
 Route::get('user/logout', [\App\Http\Controllers\User\authController::class, 'logout'])->name('user.logout');
+
+///showUser,Reservation///
+Route::get('show/user', [\App\Http\Controllers\Admin\manageController::class, 'showUser'])->name('user.show');
+Route::get('show/reservation', [\App\Http\Controllers\Admin\manageController::class, 'showReservation'])->name('reservation.show');
 
 ///Movies///
 Route::get('movie/index', [\App\Http\Controllers\Admin\movieController::class, 'index'])->name('movie.index');
@@ -41,7 +47,9 @@ Route::get('movie/edit/{id}', [\App\Http\Controllers\Admin\movieController::clas
 Route::put('movie/update/{id}', [\App\Http\Controllers\Admin\movieController::class, 'update'])->name('movie.update');
 Route::delete('movie/delete/{id}', [\App\Http\Controllers\Admin\movieController::class, 'destroy'])->name('movie.destroy');
 
-
+///Reservation///
+Route::get('reservation', [\App\Http\Controllers\Reserve\reservationController::class, 'create'])->name('reservation.create');
+Route::post('reservation/store', [\App\Http\Controllers\Reserve\reservationController::class, 'store'])->name('reservation.store');
 
 
 

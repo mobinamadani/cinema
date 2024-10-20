@@ -41,7 +41,7 @@ class authController extends Controller
     {
         if (Auth::guard('web')->attempt($request->validated())) {
             $request->session()->regenerate();
-            return redirect('/');
+            return redirect(to:route('reservation.create'));
         }
         return redirect()->back();
 

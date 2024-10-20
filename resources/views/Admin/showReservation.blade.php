@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../../css/movieCreate.css">
+    <link rel="stylesheet" href="../../css/movieIndex.css">
 </head>
 <body>
 <div class="container">
@@ -33,30 +33,31 @@
     <main class="main-content">
         <div>
             <div class="instruction-box m-top1 m-right1">
-                <form  action="{{route('movie.store')}}" method="post">
-                    @csrf
 
-                    <div class="p-left2">
-                        <h4>افزودن فیلم</h4>
-                    </div>
+                <div>
+                    <h4 class="p-left3">لیست رزرو ها</h4>
 
-                    <div class="p-left2 p-top2">
-                        <input type="text" name="title" id="title" placeholder="نام">
-                    </div>
-
-                    <div class="p-left2 p-top2">
-                        <button type="submit" class="button button:hover">افزودن</button>
-                    </div>
-                </form>
-
-
+                    <table class="p-left2">
+                        <tr class="instruction-box1">
+                            <th>ایمیل کاربر</th>
+                            <th>نام فیلم</th>
+                        </tr>
+                        @foreach($reservations as $key => $reservation)
+                            <tr>
+                                <td>{{$reservation->user->email}}</td>
+                                <td>{{$reservation->movie->title}}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
             </div>
-
         </div>
     </main>
-
+</div>
 </div>
 
 </body>
 </html>
+
+
 

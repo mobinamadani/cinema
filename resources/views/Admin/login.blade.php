@@ -12,8 +12,8 @@
     <form class="login-form" action="{{route('admin.store')}}" method="post">
         @csrf
 
-        <div class="m-r form-group">
-            <input type="text" id="name" name="name"  placeholder="نام" required>
+        <div class="form-group m-r">
+            <input type="email" id="email" name="email" placeholder="ایمیل" required>
         </div>
 
         <div class="form-group m-r">

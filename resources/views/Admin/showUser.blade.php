@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../../css/movieCreate.css">
+    <link rel="stylesheet" href="../../css/movieIndex.css">
 </head>
 <body>
 <div class="container">
@@ -33,30 +33,30 @@
     <main class="main-content">
         <div>
             <div class="instruction-box m-top1 m-right1">
-                <form  action="{{route('movie.store')}}" method="post">
-                    @csrf
 
-                    <div class="p-left2">
-                        <h4>افزودن فیلم</h4>
-                    </div>
-
-                    <div class="p-left2 p-top2">
-                        <input type="text" name="title" id="title" placeholder="نام">
-                    </div>
-
-                    <div class="p-left2 p-top2">
-                        <button type="submit" class="button button:hover">افزودن</button>
-                    </div>
-                </form>
+                <div>
+                    <h4 class="p-left3">لیست کاربران</h4>
 
 
+                    <table class="p-left2">
+                        <tr class="instruction-box1">
+                            <th>ایمیل</th>
+                        </tr>
+                        @foreach($users as $key => $user)
+                            <tr>
+                                <td>{{$user->email}}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
             </div>
-
         </div>
     </main>
-
+</div>
 </div>
 
 </body>
 </html>
+
+
 

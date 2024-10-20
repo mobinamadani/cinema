@@ -39,11 +39,11 @@ class authController extends Controller
 
     public function login(loginRequest $request)
     {
-        if(Auth::guard('web')->attempt($request->validated())) {
+        if (Auth::guard('web')->attempt($request->validated())) {
             $request->session()->regenerate();
-
+            return redirect('/');
         }
-        return redirect('/');
+        return redirect()->back();
 
     }
 

@@ -21,17 +21,23 @@
             <h4>.اگر در سینماتایم حساب کاربری دارید، وارد شوید</h4>
         </section>
 
-        <section class="flex">
-            <div class="m-top3">
-                <button type="submit" class="box box:hover">ورود</button>
-            </div>
+        <article>
+            <section class="flex">
+                <div class="m-top3">
+                    <button type="submit" class="box box:hover">ورود</button>
+                </div>
 
-            <div class="form-group m-top3">
-                <input type="password" id="password" name="password" placeholder="...رمزعبور" class="text-right m-left2" required>
-            </div>
+                <div class="form-group m-top3">
+                    <input type="email" id="email" name="email" placeholder="...ایمیل" class="text-right m-left2" required>
+                </div>
+            </section>
 
-        </section>
-
+            <section>
+                <div class="form-group m-top3">
+                    <input type="password" id="password" name="password" placeholder="...رمزعبور" class="text-right m-bottom1 m-left9" required>
+                </div>
+            </section>
+        </article>
     </form>
 </body>
 </html>

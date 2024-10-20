@@ -33,6 +33,13 @@ Route::get('user/loginForm', [\App\Http\Controllers\User\authController::class, 
 Route::post('user/login', [\App\Http\Controllers\User\authController::class, 'login'])->name('user.login');
 Route::get('user/logout', [\App\Http\Controllers\User\authController::class, 'logout'])->name('user.logout');
 
+///Movies///
+Route::get('movie/index', [\App\Http\Controllers\Admin\movieController::class, 'index'])->name('movie.index');
+Route::get('movie/create', [\App\Http\Controllers\Admin\movieController::class, 'create'])->name('movie.create');
+Route::post('movie/store', [\App\Http\Controllers\Admin\movieController::class, 'store'])->name('movie.store');
+Route::get('movie/edit/{id}', [\App\Http\Controllers\Admin\movieController::class, 'edit'])->name('movie.edit');
+Route::put('movie/update/{id}', [\App\Http\Controllers\Admin\movieController::class, 'update'])->name('movie.update');
+Route::delete('movie/delete/{id}', [\App\Http\Controllers\Admin\movieController::class, 'destroy'])->name('movie.destroy');
 
 
 

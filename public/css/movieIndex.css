@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    height: 640px;
+    background: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.sidebar ul li a:hover {
+    background: #575757;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    background: white;
+    width: 550px;
+    /*color: #fff;*/
+    padding: 10px;
+    text-align: left;
+}
+
+.icon-1{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+}
+
+.instruction-box {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 450px;
+    height: 250px;
+}
+
+.instruction-box1{
+    background-color: rgba(189, 189, 189, 0.72);
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 50px;
+    height: 30px;
+}
+
+.button {
+    background-color: #f33a3a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 20px;
+    width: 60px; /* Set a specific width */
+    height: 30px; /* Set a specific height */
+}
+
+button:hover {
+    background-color: #ef0404;
+}
+
+.flex{
+    display: flex;
+}
+
+.black{
+    color: black;
+}
+
+.p-top1{
+    padding-top: 9px;
+}
+
+.p-top2{
+    padding-top: 18px;
+}
+
+.p-top3{
+    padding-top: 40px;
+}
+
+.p-top4{
+    padding-top: 55px;
+}
+
+.p-top5{
+    padding-top: 1px;
+}
+
+
+.p-right1{
+    padding-left: 20px;
+}
+
+.p-left2{
+    padding-left: 20px;
+}
+
+.p-left3{
+    padding-left: 24px;
+}
+
+.m-top1{
+    margin-top: 60px;
+}
+
+
+.m-top2{
+    margin-top: 10px;
+}
+
+.m-right1{
+    margin-left: 70px;
+}
+
+.m-right2{
+    margin-left: 7px;
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+.text-black{
+    color: #575757;
+    text-decoration: none ;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+

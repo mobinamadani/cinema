@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/movieCreate.css">
 </head>
 <body>
 <div class="container">
@@ -28,16 +28,37 @@
                 <li><a href="{{route('admin.logout')}}">خروج</a></li>
             </ul>
         </div>
-
     </aside>
 
-    <main class="main-content p-top4">
-        <header class="black">
-            <h3>Welcome to the Dashboard </h3>
-        </header>
+    <main class="main-content">
+        <div>
+            <div class="instruction-box m-top1 m-right1">
+                <form  action="{{route('movie.update', $movie->id)}}" method="post">
+                    @method('PUT')
+                    @csrf
 
+                    <div class="p-left2">
+                        <h4>ویرایش فیلم</h4>
+                    </div>
+
+                    <div class="p-left2 p-top2">
+                        <input type="text" name="title" id="title" placeholder="نام">
+                    </div>
+
+                    <div class="p-left2 p-top2">
+                        <button type="submit" class="button button:hover">ویرایش</button>
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
     </main>
+
 </div>
 
 </body>
 </html>
+
+

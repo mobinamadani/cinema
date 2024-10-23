@@ -26,8 +26,6 @@ Route::get('admin/logout', [\App\Http\Controllers\Admin\authController::class, '
 ///AdminDashboard///
 Route::get('admin/dashboard', [\App\Http\Controllers\Admin\authController::class, 'dashboard'])->name('admin.dashboard');
 
-
-
 ///UserAuth///
 Route::get('user/register', [\App\Http\Controllers\User\authController::class, 'register'])->name('user.register');
 Route::post('user/store', [\App\Http\Controllers\User\authController::class, 'store'])->name('user.store');

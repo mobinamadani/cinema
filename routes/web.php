@@ -13,55 +13,70 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-///Index///
+///------------------------------------------------Welcome---------------------------------------------------///
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-///adminAuth///
-Route::get('admin/login', [\App\Http\Controllers\Admin\authController::class, 'login'])->name('admin.login');
-Route::post('admin/login', [\App\Http\Controllers\Admin\authController::class, 'store'])->name('admin.store');
-Route::get('admin/logout', [\App\Http\Controllers\Admin\authController::class, 'logout'])->name('admin.logout');
 
-///AdminDashboard///
-Route::get('admin/dashboard', [\App\Http\Controllers\Admin\authController::class, 'dashboard'])->name('admin.dashboard');
+///------------------------------------------------adminAuth-------------------------------------------------///
 
-///UserAuth///
-Route::get('user/register', [\App\Http\Controllers\User\authController::class, 'register'])->name('user.register');
-Route::post('user/store', [\App\Http\Controllers\User\authController::class, 'store'])->name('user.store');
-Route::get('user/loginForm', [\App\Http\Controllers\User\authController::class, 'loginForm'])->name('user.loginForm');
-Route::post('user/login', [\App\Http\Controllers\User\authController::class, 'login'])->name('user.login');
-Route::get('user/logout', [\App\Http\Controllers\User\authController::class, 'logout'])->name('user.logout');
-
-///showUser,Reservation///
-Route::get('show/user', [\App\Http\Controllers\Admin\manageController::class, 'showUser'])->name('user.show');
-Route::get('show/reservation', [\App\Http\Controllers\Admin\manageController::class, 'showReservation'])->name('reservation.show');
-
-///Movies///
-Route::get('movie/index', [\App\Http\Controllers\Admin\movieController::class, 'index'])->name('movie.index');
-Route::get('movie/create', [\App\Http\Controllers\Admin\movieController::class, 'create'])->name('movie.create');
-Route::post('movie/store', [\App\Http\Controllers\Admin\movieController::class, 'store'])->name('movie.store');
-Route::get('movie/edit/{id}', [\App\Http\Controllers\Admin\movieController::class, 'edit'])->name('movie.edit');
-Route::put('movie/update/{id}', [\App\Http\Controllers\Admin\movieController::class, 'update'])->name('movie.update');
-Route::delete('movie/delete/{id}', [\App\Http\Controllers\Admin\movieController::class, 'destroy'])->name('movie.destroy');
-
-///Reservation///
-Route::get('reservation', [\App\Http\Controllers\Reserve\reservationController::class, 'create'])->name('reservation.create');
-Route::post('reservation/store', [\App\Http\Controllers\Reserve\reservationController::class, 'store'])->name('reservation.store');
+Route::prefix('admin')
+    ->controller(\App\Http\Controllers\Admin\authController::class)
+    ->name('admin.')
+    ->group(function () {
+        Route::get('/login', 'login')->name('login');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/logout', 'logout')->name('logout');
+        Route::get('/dashboard', 'dashboard')->name('dashboard');
+    });
 
 
+///-------------------------------------------------UserAuth-------------------------------------------------///
+
+Route::prefix('user')
+      ->controller(\App\Http\Controllers\User\authController::class)
+      ->name('user.')
+      ->group(function () {
+          Route::get('/register', 'register')->name('register');
+          Route::post('/store', 'store')->name('store');
+          Route::get('/loginForm', 'loginForm')->name('loginForm');
+          Route::post('/login', 'login')->name('login');
+          Route::get('/logout', 'logout')->name('logout');
+      });
 
 
+///-----------------------------------------------manageAdmin-----------------------------------------------///
+
+Route::prefix('show')
+      ->controller(\App\Http\Controllers\Admin\manageController::class)
+      ->group(function () {
+         Route::get('/user', 'showUser')->name('user.show');
+         Route::get('/reservation', 'showReservation')->name('reservation.show');
+      });
 
 
+///-------------------------------------------------Movies-------------------------------------------------///
+
+Route::prefix('movie')
+      ->controller(\App\Http\Controllers\Admin\movieController::class)
+      ->name('movie.')
+      ->group(function () {
+         Route::get('/index', 'index')->name('index');
+         Route::get('/create', 'create')->name('create');
+         Route::post('/store', 'store')->name('store');
+         Route::get('/edit/{id}', 'edit')->name('edit');
+         Route::put('/update/{id}', 'update')->name('update');
+         Route::delete('/delete/{id}', 'destroy')->name('destroy');
+      });
 
 
+///----------------------------------------------Reservation----------------------------------------------///
 
-
-
-
-
-
-
-
-
+Route::prefix('reservation')
+      ->controller(\App\Http\Controllers\Reserve\reservationController::class)
+      ->name('reservation.')
+      ->group(function () {
+          Route::get('/', 'create')->name('create');
+          Route::post('/store', 'store')->name('store');
+      });

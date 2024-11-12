@@ -59,7 +59,7 @@
                                                 </form>
                                             </li>
                                             <li><a href="{{ route('movie.edit' , $movie->id) }}" class="text-black m-right2">ویرایش</a></li>
-                                                 </form>
+
                                         </ul>
                                     </td>
                                 </tr>

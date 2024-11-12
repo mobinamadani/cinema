@@ -37,7 +37,7 @@ class movieController extends Controller
     public function update(AddMovieRequest $request, int $id)
     {
         $findMovie = Movie::query()->findOrFail($id);
-        $findMovie->update($request->validated()); // Use validated data
+        $findMovie->update($request->validated());
 
         return redirect()->route('movie.index');
     }
